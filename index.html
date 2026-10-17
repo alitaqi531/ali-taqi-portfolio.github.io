@@ -1,88 +1,634 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ali Taqi | eBay Specialist</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f7fb;
-      color: #1f2937;
-    }
-    header {
-      background: #102a43;
-      color: white;
-      text-align: center;
-      padding: 55px 20px;
-    }
-    header h1 { font-size: 36px; }
-    main {
-      max-width: 850px;
-      margin: 30px auto;
-      padding: 20px;
-    }
-    section {
-      background: white;
-      padding: 25px;
-      margin-bottom: 20px;
-      border-radius: 12px;
-    }
-    h2 { color: #1769aa; }
-    .tag {
-      display: inline-block;
-      background: #e5efff;
-      padding: 8px 12px;
-      margin: 5px;
-      border-radius: 6px;
-    }
-    img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin-top: 12px;
-    }
-    a { color: #1769aa; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ali Taqi - eBay Specialist and Business Developer based in Faisalabad, Pakistan.">
+    <title>Ali Taqi | eBay Specialist & Business Developer</title>
+
+    <style>
+        :root {
+            --navy: #071a35;
+            --blue: #1769e0;
+            --sky: #78d1ff;
+            --white: #ffffff;
+            --background: #f3f7fc;
+            --text: #172640;
+            --muted: #64748b;
+            --border: #e1eaf5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        /* Navigation */
+        header {
+            background: var(--navy);
+            color: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            min-height: 75px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--sky);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #dbeafe;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sky);
+        }
+
+        .menu-toggle {
+            display: none;
+            padding: 8px 12px;
+            background: transparent;
+            border: 1px solid #53708f;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(125deg, #071a35, #0c3267);
+            color: var(--white);
+            padding: 100px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.4fr 0.6fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: var(--sky);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: clamp(42px, 6vw, 70px);
+            line-height: 1.1;
+            letter-spacing: -2px;
+            margin: 20px 0;
+        }
+
+        h1 span {
+            color: var(--sky);
+        }
+
+        .hero p {
+            color: #d1e1f5;
+            font-size: 17px;
+            max-width: 650px;
+            margin-bottom: 28px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 13px 21px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+        }
+
+        .btn-primary {
+            background: var(--sky);
+            color: var(--navy);
+        }
+
+        .btn-secondary {
+            color: white;
+            border: 1px solid #7890ad;
+        }
+
+        .profile-card {
+            padding: 30px;
+            border-radius: 22px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.17);
+        }
+
+        .initials {
+            width: 85px;
+            height: 85px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #1769e0, #58c7ff);
+            border-radius: 22px;
+            font-size: 30px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .profile-card h2 {
+            margin-bottom: 5px;
+        }
+
+        .profile-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .profile-info {
+            border-top: 1px solid #425978;
+            margin-top: 22px;
+            padding-top: 18px;
+            display: grid;
+            gap: 12px;
+            color: #dbeafe;
+            font-size: 14px;
+        }
+
+        /* General Sections */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 35px;
+        }
+
+        .section-label {
+            color: var(--blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .section-heading h2 {
+            color: var(--navy);
+            font-size: clamp(30px, 4vw, 44px);
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin: 12px 0;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .card {
+            background: var(--white);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 28px;
+        }
+
+        .card h3 {
+            color: var(--navy);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--muted);
+        }
+
+        /* Skills */
+        .skills-section {
+            background: #eaf1fa;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(7, 26, 53, 0.08);
+        }
+
+        .skill-icon {
+            width: 45px;
+            height: 45px;
+            display: grid;
+            place-items: center;
+            border-radius: 12px;
+            background: #e8f2ff;
+            color: var(--blue);
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 16px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        /* Experience */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .experience-card {
+            border-left: 4px solid var(--blue);
+        }
+
+        .duration {
+            color: var(--blue);
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .experience-card h3 {
+            margin: 10px 0;
+        }
+
+        .note {
+            margin-top: 20px;
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        /* Portfolio Projects */
+        .projects-section {
+            background: #eaf1fa;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            overflow: hidden;
+            border-radius: 18px;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .project-banner {
+            min-height: 150px;
+            padding: 22px;
+            display: flex;
+            align-items: end;
+            color: white;
+            font-size: 21px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #071a35, #1769e0);
+        }
+
+        .project-card:nth-child(2) .project-banner {
+            background: linear-gradient(135deg, #104b79, #38a6e8);
+        }
+
+        .project-card:nth-child(3) .project-banner {
+            background: linear-gradient(135deg, #172b4d, #4972b8);
+        }
+
+        .project-content {
+            padding: 22px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 14px;
+            padding: 5px 9px;
+            border-radius: 7px;
+            background: #eaf4ff;
+            color: #1453a5;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Contact */
+        .contact-section {
+            background: linear-gradient(125deg, #071a35, #0c3267);
+            color: white;
+        }
+
+        .contact-section .section-heading h2 {
+            color: white;
+        }
+
+        .contact-section .section-heading p {
+            color: #c6d8ef;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .contact-card {
+            padding: 28px;
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.17);
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 18px;
+        }
+
+        .contact-item {
+            margin: 17px 0;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: var(--sky);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        .contact-item a:hover {
+            color: var(--sky);
+        }
+
+        .contact-description {
+            color: #d1e1f5;
+            margin-bottom: 22px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 24px 0;
+            background: #051328;
+            color: #a7bad3;
+            font-size: 13px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 800px) {
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .experience-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 75px;
+                left: 0;
+                width: 100%;
+                padding: 22px 5%;
+                background: var(--navy);
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 18px;
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .container {
+                width: 90%;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            .buttons .btn {
+                width: 100%;
+                text-align: center;
+            }
+
+            .profile-card,
+            .card,
+            .contact-card {
+                padding: 22px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>Ali Taqi</h1>
-    <p>eBay Specialist | Product Research | Business Development</p>
-    <p>Helping businesses find profitable eBay products</p>
-  </header>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I am an eBay specialist with experience in product
-      research, listing optimization and marketplace analysis.</p>
-    </section>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#home" class="logo">ALI <span>TAQI.</span></a>
 
-    <section>
-      <h2>My Skills</h2>
-      <span class="tag">eBay Product Research</span>
-      <span class="tag">eBay UK Marketplace</span>
-      <span class="tag">Listing Optimization</span>
-      <span class="tag">ZIK Analytics</span>
-      <span class="tag">Market Research</span>
-    </section>
+                <div class="nav-links" id="navLinks">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#portfolio">Portfolio</a>
+                    <a href="#contact">Contact</a>
+                </div>
 
-    <section>
-      <h2>My Portfolio Projects</h2>
-      <p>Product research samples and marketplace analysis.</p>
-      <p>Add your project screenshots below.</p>
-      <img src="images/cv.png"
-           alt="eBay product research sample">
-    </section>
+                <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation" aria-expanded="false">
+                    Menu ☰
+                </button>
+            </nav>
+        </div>
+    </header>
 
-    <section>
-      <h2>Contact</h2>
-      <p>Email: alitaqi531@gmail.com</p>
-      <p>LinkedIn: https://www.linkedin.com/in/ali-taqi-0059693aa/</p>
-    </section>
-  </main>
-</body>
-</html>
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-content">
+
+                <div>
+                    <div class="eyebrow">eCommerce • Business Development</div>
+
+                    <h1>
+                        Ali Taqi<br>
+                        <span>eBay Specialist</span>
+                    </h1>
+
+                    <p>
+                        I support eCommerce businesses through product research,
+                        listing preparation, and account management. I also bring
+                        business development experience in communication, lead
+                        generation, and client relationships.
+                    </p>
+
+                    <div class="buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            Let's Connect ↗
+                        </a>
+
+                        <a href="#portfolio" class="btn btn-secondary">
+                            View My Work
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-card">
+                    <div class="initials">AT</div>
+
+                    <h2>Ali Taqi</h2>
+                    <p>eBay Specialist &amp; Business Developer</p>
+
+                    <div class="profile-info">
+                        <div>📍 Faisalabad, Pakistan</div>
+                        <div>💼 Open to suitable roles and projects</div>
+                        <div>✦ Product Research · Listings · Account Support</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+
+                <div class="section-heading">
+                    <div class="section-label">About Me</div>
+
+                    <h2>eCommerce expertise with a business mindset.</h2>
+
+                    <p>
+                        I'm Ali Taqi, based in Faisalabad, Pakistan. My focus is
+                        helping eCommerce operations stay organized through
+                        product research, listing work, and account management,
+                        while using business development skills to support
+                        outreach and client communication.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <article class="card">
+                        <h3>eBay Specialist</h3>
+                        <p>
+                            Product research, listing preparation, and account
+                            management support, with an emphasis on clear product
+                            information and organized workflows.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Business Developer</h3>
+                        <p>
