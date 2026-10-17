@@ -374,4 +374,445 @@ footer {
 }
 
 .foot {
-    display
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+    .nav {
+        min-height: 70px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .navlinks {
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 22px 5%;
+        background: #0b1020;
+        border-bottom: 1px solid var(--line);
+        flex-direction: column;
+        gap: 18px;
+        z-index: 10;
+    }
+
+    .navlinks.open {
+        display: flex;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 0 45px;
+        gap: 28px;
+    }
+
+    .grid,
+    .samples,
+    .split {
+        grid-template-columns: 1fr;
+    }
+
+    .contact {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 25px;
+    }
+
+    section {
+        padding: 48px 0;
+    }
+}
+
+@media (max-width: 440px) {
+    .hero h1 {
+        font-size: 2.7rem;
+    }
+
+    .actions .btn {
+        width: 100%;
+    }
+
+    .mini {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .mini span:last-child {
+        text-align: left;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="wrap nav">
+        <a class="brand" href="#home">ALI<span>TAQI.</span></a>
+
+        <nav class="navlinks" id="navlinks">
+            <a href="#services">Services</a>
+            <a href="#samples">Work Samples</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-btn" id="menuBtn" aria-expanded="false">
+            Menu ☰
+        </button>
+    </div>
+</header>
+
+<main>
+
+<section class="wrap hero" id="home">
+    <div>
+        <div class="eyebrow">eBay Specialist · Business Developer</div>
+
+        <h1>
+            Smart eBay work.<br>
+            <em>Clear business focus.</em>
+        </h1>
+
+        <p class="lead">
+            I'm Ali Taqi, based in Faisalabad, Pakistan. I work across eBay
+            operations and business development, with a focus on product
+            research, listing optimization, marketplace support, and
+            finding business opportunities.
+        </p>
+
+        <div class="actions">
+            <a class="btn primary" href="#samples">Explore My Work</a>
+            <a class="btn" href="#contact">Contact Me</a>
+        </div>
+    </div>
+
+    <aside class="hero-card">
+        <div class="monogram">AT</div>
+        <h2>Ali Taqi</h2>
+        <p>eBay Specialist &amp; Business Developer</p>
+
+        <div class="mini">
+            <span>Location</span>
+            <span>Faisalabad, Pakistan</span>
+        </div>
+
+        <div class="mini">
+            <span>Focus</span>
+            <span>eBay · E-commerce</span>
+        </div>
+    </aside>
+</section>
+
+<section id="services">
+    <div class="wrap">
+        <div class="section-head">
+            <div class="eyebrow">What I Do</div>
+            <h2>Skills built around practical e-commerce work.</h2>
+            <p>
+                Support for eBay marketplace operations and business
+                development tasks. The exact scope can be tailored
+                to the project.
+            </p>
+        </div>
+
+        <div class="grid">
+            <article class="card">
+                <div class="num">01 / RESEARCH</div>
+                <h3>Product Research</h3>
+                <p>
+                    Research products and compare marketplace listings,
+                    competitors, source options, and potential profitability.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="num">02 / LISTINGS</div>
+                <h3>Listing Optimization</h3>
+                <p>
+                    Prepare clear product titles and listing content
+                    with relevant keywords and organized product details.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="num">03 / OPERATIONS</div>
+                <h3>eBay Account Support</h3>
+                <p>
+                    Support routine marketplace activities and listing
+                    workflows with attention to accuracy.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="num">04 / ANALYSIS</div>
+                <h3>Competitor &amp; ROI Analysis</h3>
+                <p>
+                    Organize product research in spreadsheets and review
+                    costs and potential margins using supplied data.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="num">05 / SOURCING</div>
+                <h3>Product Sourcing</h3>
+                <p>
+                    Compare source products against marketplace
+                    requirements, pricing, and product details.
+                </p>
+            </article>
+
+            <article class="card">
+                <div class="num">06 / GROWTH</div>
+                <h3>Business Development</h3>
+                <p>
+                    Support lead generation, market research,
+                    prospect communication, and client opportunities.
+                </p>
+            </article>
+        </div>
+
+        <div class="taglist">
+            <span class="tag">eBay UK Marketplace</span>
+            <span class="tag">ZIK Analytics</span>
+            <span class="tag">Google Sheets</span>
+            <span class="tag">Microsoft Excel</span>
+            <span class="tag">eBay Seller Hub</span>
+            <span class="tag">Lead Generation</span>
+        </div>
+    </div>
+</section>
+
+<section id="samples">
+    <div class="wrap">
+        <div class="section-head">
+            <div class="eyebrow">Selected Work</div>
+            <h2>My eBay work samples.</h2>
+            <p>
+                Add your own screenshots to demonstrate your product
+                research, listing preparation, and account support work.
+            </p>
+        </div>
+
+        <div class="samples">
+            <article class="sample">
+                <div>
+                    <div class="num">WORK SAMPLE 01</div>
+                    <h3>Product Research</h3>
+                    <p>
+                        Product research sheets, competitor links,
+                        source prices, and profitability calculations.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="sample-image"
+                         src="assets/product-research-sheet.png"
+                         alt="Product research spreadsheet"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+
+                    <p class="sample-note">
+                        Replace this image with your actual research screenshot.
+                    </p>
+                </div>
+            </article>
+
+            <article class="sample">
+                <div>
+                    <div class="num">WORK SAMPLE 02</div>
+                    <h3>eBay Listing Research</h3>
+                    <p>
+                        Product titles, competitor listings, prices,
+                        item conditions, and variation information.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="sample-image"
+                         src="assets/ebay-listing-research.png"
+                         alt="eBay listing research example"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+
+                    <p class="sample-note">
+                        Replace this image with your actual listing screenshot.
+                    </p>
+                </div>
+            </article>
+
+            <article class="sample">
+                <div>
+                    <div class="num">WORK SAMPLE 03</div>
+                    <h3>Sold Listings Analysis</h3>
+                    <p>
+                        Review sold products, selling prices, demand
+                        indicators, and competitor information.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="sample-image"
+                         src="assets/ebay-sold-research.png"
+                         alt="eBay sold listings research"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+
+                    <p class="sample-note">
+                        Replace this image with your actual sold research screenshot.
+                    </p>
+                </div>
+            </article>
+
+            <article class="sample">
+                <div>
+                    <div class="num">WORK SAMPLE 04</div>
+                    <h3>Profit &amp; Fee Analysis</h3>
+                    <p>
+                        Calculate sourcing costs, selling fees,
+                        estimated profit, ROI, and break-even prices.
+                    </p>
+                </div>
+
+                <div>
+                    <img class="sample-image"
+                         src="assets/profit-calculator-breakdown.png"
+                         alt="Profit and fee calculator"
+                         loading="lazy"
+                         onerror="this.style.display='none'">
+
+                    <p class="sample-note">
+                        Replace this image with your actual calculator screenshot.
+                    </p>
+                </div>
+            </article>
+        </div>
+
+        <p class="sample-note" style="margin-top:18px">
+            Protect client privacy by hiding names, emails, account IDs,
+            order information, and other sensitive details in screenshots.
+        </p>
+    </div>
+</section>
+
+<section id="about">
+    <div class="wrap">
+        <div class="section-head">
+            <div class="eyebrow">About Me</div>
+            <h2>Reliable support, clear communication.</h2>
+        </div>
+
+        <div class="split">
+            <div class="info">
+                <h3>Professional Profile</h3>
+                <p>
+                    I'm an eBay Specialist and Business Developer based in
+                    Faisalabad, Pakistan, with experience in eBay operations.
+                    My interests include product research, listing management,
+                    marketplace analysis, and business development.
+                </p>
+            </div>
+
+            <div class="info">
+                <h3>How I Approach Work</h3>
+                <ul>
+                    <li>Keep research and product data organized.</li>
+                    <li>Pay attention to listing accuracy.</li>
+                    <li>Communicate clearly about tasks and progress.</li>
+                    <li>Use real data and avoid unsupported claims.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="wrap">
+        <div class="contact">
+            <div>
+                <div class="eyebrow">Get In Touch</div>
+                <h2>Have an eBay project in mind?</h2>
+
+                <p>
+                    Contact me to discuss eBay support, product research,
+                    or business development opportunities.
+                </p>
+
+                <p style="margin-top:15px">
+                    <strong>Email:</strong>
+                    <a href="mailto:alitaqi531@gmail.com">
+                        alitaqi531@gmail.com
+                    </a>
+                </p>
+
+                <p>
+                    <strong>WhatsApp:</strong>
+                    <a href="https://wa.me/923247077436"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        +92 324 7077436
+                    </a>
+                </p>
+
+                <p>
+                    <strong>Location:</strong> Faisalabad, Pakistan
+                </p>
+            </div>
+
+            <div class="actions" style="margin-top:0">
+                <a class="btn primary"
+                   href="mailto:alitaqi531@gmail.com?subject=Portfolio%20Inquiry">
+                    Email Me
+                </a>
+
+                <a class="btn"
+                   href="https://wa.me/923247077436"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    WhatsApp Me
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="wrap foot">
+        <span>
+            © <span id="year"></span> Ali Taqi. All rights reserved.
+        </span>
+        <span>eBay Specialist · Business Developer · Faisalabad, Pakistan</span>
+    </div>
+</footer>
+
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navlinks = document.getElementById("navlinks");
+
+    menuBtn.addEventListener("click", function () {
+        const isOpen = navlinks.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    navlinks.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            navlinks.classList.remove("open");
+            menuBtn.setAttribute("aria-expanded", "false");
+        });
+    });
+
+    document.getElementById("year").textContent =
+        new Date().getFullYear();
+</script>
+
+</body>
+</html>
