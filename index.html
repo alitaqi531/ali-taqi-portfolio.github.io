@@ -1,818 +1,189 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Ali Taqi — eBay Specialist and Business Developer based in Faisalabad, Pakistan.">
+<meta name="description" content="Ali Taqi — eBay Specialist and Business Developer in Faisalabad, Pakistan.">
 <title>Ali Taqi | eBay Specialist & Business Developer</title>
-
 <style>
-:root {
-    --bg: #0b1020;
-    --panel: #111a2e;
-    --muted: #a8b3c9;
-    --text: #f4f7ff;
-    --accent: #76e4c2;
-    --line: rgba(255,255,255,.11);
+:root{--bg:#0b1020;--panel:#111a2e;--muted:#a8b3c9;--text:#f4f7ff;--accent:#76e4c2;--line:rgba(255,255,255,.11)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 80% 0%,#182d43 0,transparent 38%),var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif;overflow-wrap:anywhere}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1100px,92%);margin:auto}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.brand span,.eyebrow,.num{color:var(--accent)}
+.navlinks{display:flex;gap:22px;color:var(--muted);font-size:.92rem;flex-wrap:wrap}
+.navlinks a:hover{color:var(--accent)}
+.hero{padding:80px 0;display:grid;grid-template-columns:1.35fr .65fr;gap:45px;align-items:center}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(2.6rem,6vw,5rem);line-height:1.05;letter-spacing:-.05em;margin:18px 0}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{max-width:620px;color:var(--muted);font-size:1.1rem}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{display:inline-flex;justify-content:center;padding:11px 17px;border:1px solid var(--line);border-radius:9px;font-weight:700}
+.btn.primary{background:var(--accent);color:#08201b;border-color:var(--accent)}
+.hero-card,.card,.info,.sample{border:1px solid var(--line);background:#ffffff06;border-radius:17px;padding:24px}
+.hero-card{background:linear-gradient(145deg,#ffffff12,#ffffff04);border-radius:22px}
+.monogram{width:80px;height:80px;border-radius:20px;display:grid;place-items:center;background:var(--accent);color:#09221c;font-size:2rem;font-weight:900;margin-bottom:20px}
+.hero-card h2{margin:0}.hero-card p,.muted{color:var(--muted)}
+.mini{display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--line);margin-top:17px;padding-top:13px;font-size:.9rem}
+.mini span:last-child{color:var(--accent);text-align:right}
+section{padding:58px 0}
+.section-head{max-width:700px;margin-bottom:28px}
+.section-head h2{font-size:clamp(2rem,4vw,3rem);line-height:1.15;letter-spacing:-.04em;margin:8px 0 12px}
+.section-head p,.card p,.sample p,.info p,.info li{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.card h3{margin:9px 0}
+.num{font-size:.8rem;font-weight:800;letter-spacing:.1em}
+.taglist{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+.tag{padding:7px 12px;border:1px solid var(--line);border-radius:99px;color:#dbe5f5;font-size:.9rem}
+.samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.sample{min-width:0;display:flex;flex-direction:column;gap:16px;background:linear-gradient(135deg,#15273a,#111827)}
+.sample h3{margin:8px 0}
+.sample-image-link{display:block;width:100%;overflow:hidden;border-radius:10px;background:#fff}
+.research-image{display:block;width:100%;height:auto;max-width:100%;object-fit:contain}
+.sample-note{font-size:.82rem!important;margin-top:auto}
+.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.info h3{margin-top:0}
+.info ul{padding-left:20px}
+.contact{display:flex;justify-content:space-between;align-items:center;gap:25px;padding:32px;border:1px solid #76e4c24d;background:linear-gradient(120deg,#122c32,#111a2e);border-radius:22px}
+.contact h2{font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:0 0 10px}
+.contact p{color:var(--muted);margin:5px 0}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.88rem}
+.foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+@media(max-width:760px){
+ .nav{padding:15px 0;align-items:flex-start;flex-direction:column}
+ .navlinks{gap:14px;font-size:.84rem}
+ .hero{grid-template-columns:1fr;padding:48px 0;gap:25px}
+ .grid,.samples,.split{grid-template-columns:1fr}
+ .contact{align-items:flex-start;flex-direction:column;padding:24px}
+ section{padding:42px 0}
+ .sample{padding:16px}
 }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background:
-        radial-gradient(ellipse at 80% 0%, #182d43 0, transparent 38%),
-        var(--bg);
-    color: var(--text);
-    font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-.wrap {
-    width: min(1100px, 92%);
-    margin: auto;
-}
-
-header {
-    border-bottom: 1px solid var(--line);
-}
-
-.nav {
-    min-height: 76px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-}
-
-.brand {
-    font-weight: 800;
-    letter-spacing: .04em;
-    font-size: 1.15rem;
-}
-
-.brand span {
-    color: var(--accent);
-}
-
-.navlinks {
-    display: flex;
-    gap: 25px;
-    color: var(--muted);
-    font-size: .93rem;
-}
-
-.navlinks a:hover {
-    color: var(--accent);
-}
-
-.menu-btn {
-    display: none;
-    background: transparent;
-    border: 1px solid var(--line);
-    color: white;
-    padding: 8px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.hero {
-    padding: 92px 0 78px;
-    display: grid;
-    grid-template-columns: 1.35fr .65fr;
-    gap: 50px;
-    align-items: center;
-}
-
-.eyebrow {
-    color: var(--accent);
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    font-size: .78rem;
-}
-
-.hero h1 {
-    font-size: clamp(2.7rem, 6vw, 5rem);
-    line-height: 1.04;
-    letter-spacing: -.055em;
-    margin: 18px 0;
-}
-
-.hero h1 em {
-    font-style: normal;
-    color: var(--accent);
-}
-
-.lead {
-    max-width: 620px;
-    color: var(--muted);
-    font-size: 1.12rem;
-}
-
-.actions {
-    display: flex;
-    gap: 13px;
-    flex-wrap: wrap;
-    margin-top: 28px;
-}
-
-.btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 12px 18px;
-    border-radius: 9px;
-    font-weight: 750;
-    border: 1px solid var(--line);
-    transition: .2s;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn.primary {
-    background: var(--accent);
-    color: #08201b;
-    border-color: var(--accent);
-}
-
-.hero-card {
-    border: 1px solid var(--line);
-    background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.07),
-        rgba(255,255,255,.025)
-    );
-    border-radius: 22px;
-    padding: 28px;
-    box-shadow: 0 25px 80px #0002;
-}
-
-.monogram {
-    height: 88px;
-    width: 88px;
-    border-radius: 22px;
-    display: grid;
-    place-items: center;
-    background: var(--accent);
-    color: #09221c;
-    font-size: 2rem;
-    font-weight: 900;
-    margin-bottom: 24px;
-}
-
-.hero-card h2 {
-    font-size: 1.35rem;
-    margin-bottom: 5px;
-}
-
-.hero-card p {
-    color: var(--muted);
-}
-
-.mini {
-    border-top: 1px solid var(--line);
-    margin-top: 22px;
-    padding-top: 17px;
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    font-size: .9rem;
-}
-
-.mini span:last-child {
-    color: var(--accent);
-    text-align: right;
-}
-
-section {
-    padding: 65px 0;
-}
-
-.section-head {
-    max-width: 680px;
-    margin-bottom: 30px;
-}
-
-.section-head .eyebrow {
-    margin-bottom: 8px;
-}
-
-.section-head h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: -.04em;
-    line-height: 1.15;
-    margin-bottom: 13px;
-}
-
-.section-head p {
-    color: var(--muted);
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 17px;
-}
-
-.card {
-    padding: 24px;
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    background: rgba(255,255,255,.035);
-    transition: transform .2s, background .2s;
-}
-
-.card:hover {
-    transform: translateY(-4px);
-    background: rgba(255,255,255,.06);
-}
-
-.num {
-    color: var(--accent);
-    font-size: .82rem;
-    font-weight: 800;
-    letter-spacing: .12em;
-}
-
-.card h3 {
-    margin: 10px 0 8px;
-    font-size: 1.15rem;
-}
-
-.card p {
-    color: var(--muted);
-    font-size: .95rem;
-}
-
-.taglist {
-    display: flex;
-    gap: 9px;
-    flex-wrap: wrap;
-    margin-top: 24px;
-}
-
-.tag {
-    padding: 8px 12px;
-    border: 1px solid var(--line);
-    border-radius: 99px;
-    color: #dbe5f5;
-    font-size: .9rem;
-    background: #ffffff06;
-}
-
-.samples {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 17px;
-}
-
-.sample {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    gap: 18px;
-    background: linear-gradient(135deg, #15273a, #111827);
-    border: 1px solid var(--line);
-    border-radius: 17px;
-    padding: 25px;
-    min-width: 0;
-}
-
-.sample h3 {
-    margin: 9px 0;
-}
-
-.sample p {
-    color: var(--muted);
-}
-
-.sample-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background: white;
-}
-
-.sample-note {
-    font-size: .82rem;
-    color: var(--muted);
-}
-
-.split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.info {
-    border: 1px solid var(--line);
-    border-radius: 16px;
-    padding: 25px;
-    background: #ffffff04;
-}
-
-.info h3 {
-    margin-bottom: 12px;
-}
-
-.info p,
-.info li {
-    color: var(--muted);
-}
-
-.info ul {
-    padding-left: 20px;
-}
-
-.contact {
-    border: 1px solid #76e4c24d;
-    background: linear-gradient(120deg, #122c32, #111a2e);
-    padding: 36px;
-    border-radius: 22px;
-    display: flex;
-    justify-content: space-between;
-    gap: 25px;
-    align-items: center;
-}
-
-.contact h2 {
-    font-size: clamp(1.8rem, 4vw, 2.6rem);
-    line-height: 1.15;
-    margin-bottom: 10px;
-}
-
-.contact p {
-    color: var(--muted);
-    overflow-wrap: anywhere;
-}
-
-.contact a:hover {
-    color: var(--accent);
-}
-
-footer {
-    border-top: 1px solid var(--line);
-    padding: 25px 0;
-    color: var(--muted);
-    font-size: .88rem;
-}
-
-.foot {
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-@media (max-width: 760px) {
-    .nav {
-        min-height: 70px;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-
-    .navlinks {
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 22px 5%;
-        background: #0b1020;
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        gap: 18px;
-        z-index: 10;
-    }
-
-    .navlinks.open {
-        display: flex;
-    }
-
-    .hero {
-        grid-template-columns: 1fr;
-        padding: 65px 0 45px;
-        gap: 28px;
-    }
-
-    .grid,
-    .samples,
-    .split {
-        grid-template-columns: 1fr;
-    }
-
-    .contact {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 25px;
-    }
-
-    section {
-        padding: 48px 0;
-    }
-}
-
-@media (max-width: 440px) {
-    .hero h1 {
-        font-size: 2.7rem;
-    }
-
-    .actions .btn {
-        width: 100%;
-    }
-
-    .mini {
-        flex-direction: column;
-        gap: 3px;
-    }
-
-    .mini span:last-child {
-        text-align: left;
-    }
-}
+@media(max-width:380px){.navlinks{gap:10px}.hero h1{font-size:2.5rem}.btn{width:100%}}
 </style>
 </head>
-
 <body>
-
-<header>
-    <div class="wrap nav">
-        <a class="brand" href="#home">ALI<span>TAQI.</span></a>
-
-        <nav class="navlinks" id="navlinks">
-            <a href="#services">Services</a>
-            <a href="#samples">Work Samples</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
-        </nav>
-
-        <button class="menu-btn" id="menuBtn" aria-expanded="false">
-            Menu ☰
-        </button>
-    </div>
+<header class="wrap nav">
+<a class="brand" href="#home">ALI<span>TAQI.</span></a>
+<nav class="navlinks" aria-label="Main navigation">
+<a href="#services">Services</a>
+<a href="#samples">Work Samples</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <main>
-
 <section class="wrap hero" id="home">
-    <div>
-        <div class="eyebrow">eBay Specialist · Business Developer</div>
-
-        <h1>
-            Smart eBay work.<br>
-            <em>Clear business focus.</em>
-        </h1>
-
-        <p class="lead">
-            I'm Ali Taqi, based in Faisalabad, Pakistan. I work across eBay
-            operations and business development, with a focus on product
-            research, listing optimization, marketplace support, and
-            finding business opportunities.
-        </p>
-
-        <div class="actions">
-            <a class="btn primary" href="#samples">Explore My Work</a>
-            <a class="btn" href="#contact">Contact Me</a>
-        </div>
-    </div>
-
-    <aside class="hero-card">
-        <div class="monogram">AT</div>
-        <h2>Ali Taqi</h2>
-        <p>eBay Specialist &amp; Business Developer</p>
-
-        <div class="mini">
-            <span>Location</span>
-            <span>Faisalabad, Pakistan</span>
-        </div>
-
-        <div class="mini">
-            <span>Focus</span>
-            <span>eBay · E-commerce</span>
-        </div>
-    </aside>
+<div>
+<div class="eyebrow">eBay Specialist · Business Developer</div>
+<h1>Smart eBay work.<br><em>Clear business focus.</em></h1>
+<p class="lead">I’m Ali Taqi, based in Faisalabad, Pakistan. I work across eBay operations and business development, focusing on product research, listing optimization, marketplace support and business opportunities.</p>
+<div class="actions">
+<a class="btn primary" href="#samples">Explore my work</a>
+<a class="btn" href="#contact">Contact me</a>
+</div>
+</div>
+<aside class="hero-card">
+<div class="monogram">AT</div>
+<h2>Ali Taqi</h2>
+<p>eBay Specialist &amp; Business Developer</p>
+<div class="mini"><span>Location</span><span>Faisalabad, Pakistan</span></div>
+<div class="mini"><span>Experience</span><span>eBay · Business Development</span></div>
+</aside>
 </section>
 
 <section id="services">
-    <div class="wrap">
-        <div class="section-head">
-            <div class="eyebrow">What I Do</div>
-            <h2>Skills built around practical e-commerce work.</h2>
-            <p>
-                Support for eBay marketplace operations and business
-                development tasks. The exact scope can be tailored
-                to the project.
-            </p>
-        </div>
-
-        <div class="grid">
-            <article class="card">
-                <div class="num">01 / RESEARCH</div>
-                <h3>Product Research</h3>
-                <p>
-                    Research products and compare marketplace listings,
-                    competitors, source options, and potential profitability.
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="num">02 / LISTINGS</div>
-                <h3>Listing Optimization</h3>
-                <p>
-                    Prepare clear product titles and listing content
-                    with relevant keywords and organized product details.
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="num">03 / OPERATIONS</div>
-                <h3>eBay Account Support</h3>
-                <p>
-                    Support routine marketplace activities and listing
-                    workflows with attention to accuracy.
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="num">04 / ANALYSIS</div>
-                <h3>Competitor &amp; ROI Analysis</h3>
-                <p>
-                    Organize product research in spreadsheets and review
-                    costs and potential margins using supplied data.
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="num">05 / SOURCING</div>
-                <h3>Product Sourcing</h3>
-                <p>
-                    Compare source products against marketplace
-                    requirements, pricing, and product details.
-                </p>
-            </article>
-
-            <article class="card">
-                <div class="num">06 / GROWTH</div>
-                <h3>Business Development</h3>
-                <p>
-                    Support lead generation, market research,
-                    prospect communication, and client opportunities.
-                </p>
-            </article>
-        </div>
-
-        <div class="taglist">
-            <span class="tag">eBay UK Marketplace</span>
-            <span class="tag">ZIK Analytics</span>
-            <span class="tag">Google Sheets</span>
-            <span class="tag">Microsoft Excel</span>
-            <span class="tag">eBay Seller Hub</span>
-            <span class="tag">Lead Generation</span>
-        </div>
-    </div>
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">What I do</div>
+<h2>Skills built around practical e-commerce work.</h2>
+<p>Support for eBay marketplace operations and business development tasks.</p>
+</div>
+<div class="grid">
+<article class="card"><div class="num">01 / RESEARCH</div><h3>Product Research</h3><p>Research products and compare competitor listings, source options, prices and potential profitability.</p></article>
+<article class="card"><div class="num">02 / LISTINGS</div><h3>Listing Optimization</h3><p>Prepare relevant product titles and clear listing content with organized product details.</p></article>
+<article class="card"><div class="num">03 / OPERATIONS</div><h3>eBay Account Support</h3><p>Support marketplace activities, listing workflows and account-related tasks.</p></article>
+<article class="card"><div class="num">04 / ANALYSIS</div><h3>Competitor &amp; ROI Analysis</h3><p>Organize research data and review costs, fees, profit and potential margins.</p></article>
+<article class="card"><div class="num">05 / SOURCING</div><h3>Product Sourcing</h3><p>Compare source products against marketplace requirements, prices and product details.</p></article>
+<article class="card"><div class="num">06 / GROWTH</div><h3>Business Development</h3><p>Support lead generation, market research, prospect communication and client opportunities.</p></article>
+</div>
+<div class="taglist">
+<span class="tag">eBay UK Marketplace</span><span class="tag">ZIK Analytics</span><span class="tag">Google Sheets</span><span class="tag">Microsoft Excel</span><span class="tag">eBay Seller Hub</span><span class="tag">Lead Generation</span>
+</div>
+</div>
 </section>
 
 <section id="samples">
-    <div class="wrap">
-        <div class="section-head">
-            <div class="eyebrow">Selected Work</div>
-            <h2>My eBay work samples.</h2>
-            <p>
-                Add your own screenshots to demonstrate your product
-                research, listing preparation, and account support work.
-            </p>
-        </div>
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">Selected work</div>
+<h2>eBay Product Research &amp; Analysis</h2>
+<p>Examples of product research, sold listings, marketplace analysis and profit calculations.</p>
+</div>
 
-        <div class="samples">
-            <article class="sample">
-                <div>
-                    <div class="num">WORK SAMPLE 01</div>
-                    <h3>Product Research</h3>
-                    <p>
-                        Product research sheets, competitor links,
-                        source prices, and profitability calculations.
-                    </p>
-                </div>
+<div class="samples">
+<article class="sample">
+<div><div class="num">WORK SAMPLE 01</div><h3>eBay Hunting Sheet</h3><p>Competitor links and prices, source costs, break-even listing price, eBay fees, ad charges, estimated profit and percentage calculations.</p></div>
+<a class="sample-image-link" href="assets/work-sample-1.png" target="_blank" rel="noopener"><img class="research-image" src="assets/work-sample-1.png" alt="eBay hunting spreadsheet with competitor links, source prices, fees and profit calculations" loading="lazy"></a>
+<p class="sample-note">Product research spreadsheet sample.</p>
+</article>
 
-                <div>
-                    <img class="sample-image"
-                         src="assets/product-research-sheet.png"
-                         alt="Product research spreadsheet"
-                         loading="lazy"
-                         onerror="this.style.display='none'">
+<article class="sample">
+<div><div class="num">WORK SAMPLE 02</div><h3>eBay Sold Listings Research</h3><p>Researching sold products, prices, demand, quantities and marketplace competition.</p></div>
+<a class="sample-image-link" href="assets/work-sample-2.png" target="_blank" rel="noopener"><img class="research-image" src="assets/work-sample-2.png" alt="eBay sold listings research screenshot with seller account name hidden" loading="lazy"></a>
+<p class="sample-note">Seller account name hidden for privacy.</p>
+</article>
 
-                    <p class="sample-note">
-                        Replace this image with your actual research screenshot.
-                    </p>
-                </div>
-            </article>
+<article class="sample">
+<div><div class="num">WORK SAMPLE 03</div><h3>eBay Product Analysis</h3><p>Product listing details, sales data, pricing and competitor research used to assess potential products.</p></div>
+<a class="sample-image-link" href="assets/work-sample-3.png" target="_blank" rel="noopener"><img class="research-image" src="assets/work-sample-3.png" alt="eBay product research page with store name blurred" loading="lazy"></a>
+<p class="sample-note">Store name blurred for privacy.</p>
+</article>
 
-            <article class="sample">
-                <div>
-                    <div class="num">WORK SAMPLE 02</div>
-                    <h3>eBay Listing Research</h3>
-                    <p>
-                        Product titles, competitor listings, prices,
-                        item conditions, and variation information.
-                    </p>
-                </div>
-
-                <div>
-                    <img class="sample-image"
-                         src="assets/ebay-listing-research.png"
-                         alt="eBay listing research example"
-                         loading="lazy"
-                         onerror="this.style.display='none'">
-
-                    <p class="sample-note">
-                        Replace this image with your actual listing screenshot.
-                    </p>
-                </div>
-            </article>
-
-            <article class="sample">
-                <div>
-                    <div class="num">WORK SAMPLE 03</div>
-                    <h3>Sold Listings Analysis</h3>
-                    <p>
-                        Review sold products, selling prices, demand
-                        indicators, and competitor information.
-                    </p>
-                </div>
-
-                <div>
-                    <img class="sample-image"
-                         src="assets/ebay-sold-research.png"
-                         alt="eBay sold listings research"
-                         loading="lazy"
-                         onerror="this.style.display='none'">
-
-                    <p class="sample-note">
-                        Replace this image with your actual sold research screenshot.
-                    </p>
-                </div>
-            </article>
-
-            <article class="sample">
-                <div>
-                    <div class="num">WORK SAMPLE 04</div>
-                    <h3>Profit &amp; Fee Analysis</h3>
-                    <p>
-                        Calculate sourcing costs, selling fees,
-                        estimated profit, ROI, and break-even prices.
-                    </p>
-                </div>
-
-                <div>
-                    <img class="sample-image"
-                         src="assets/profit-calculator-breakdown.png"
-                         alt="Profit and fee calculator"
-                         loading="lazy"
-                         onerror="this.style.display='none'">
-
-                    <p class="sample-note">
-                        Replace this image with your actual calculator screenshot.
-                    </p>
-                </div>
-            </article>
-        </div>
-
-        <p class="sample-note" style="margin-top:18px">
-            Protect client privacy by hiding names, emails, account IDs,
-            order information, and other sensitive details in screenshots.
-        </p>
-    </div>
+<article class="sample">
+<div><div class="num">WORK SAMPLE 04</div><h3>Profit Calculator</h3><p>Sale price, sourcing cost, selling fees, advertising rate, estimated net profit, ROI and break-even price.</p></div>
+<a class="sample-image-link" href="assets/work-sample-4.png" target="_blank" rel="noopener"><img class="research-image" src="assets/work-sample-4.png" alt="Profit calculator showing eBay income, sourcing costs, fees, net profit, ROI and minimum selling price" loading="lazy"></a>
+<p class="sample-note">Profit calculator screenshot supplied by Ali Taqi. Results depend on actual costs and fees.</p>
+</article>
+</div>
+</div>
 </section>
 
 <section id="about">
-    <div class="wrap">
-        <div class="section-head">
-            <div class="eyebrow">About Me</div>
-            <h2>Reliable support, clear communication.</h2>
-        </div>
-
-        <div class="split">
-            <div class="info">
-                <h3>Professional Profile</h3>
-                <p>
-                    I'm an eBay Specialist and Business Developer based in
-                    Faisalabad, Pakistan, with experience in eBay operations.
-                    My interests include product research, listing management,
-                    marketplace analysis, and business development.
-                </p>
-            </div>
-
-            <div class="info">
-                <h3>How I Approach Work</h3>
-                <ul>
-                    <li>Keep research and product data organized.</li>
-                    <li>Pay attention to listing accuracy.</li>
-                    <li>Communicate clearly about tasks and progress.</li>
-                    <li>Use real data and avoid unsupported claims.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="wrap">
+<div class="section-head"><div class="eyebrow">About me</div><h2>Reliable support, clear communication.</h2></div>
+<div class="split">
+<div class="info"><h3>Professional Profile</h3><p>I’m an eBay Specialist and Business Developer based in Faisalabad, Pakistan, with experience in eBay operations across Faisalabad and Lahore. My interests include product research, listing management, marketplace analysis and business development.</p></div>
+<div class="info"><h3>How I Approach Work</h3><ul><li>Keep research and product data organized.</li><li>Pay attention to listing accuracy and marketplace requirements.</li><li>Communicate clearly about tasks and progress.</li><li>Use real data and avoid unsupported performance claims.</li></ul></div>
+</div>
+</div>
 </section>
 
 <section id="contact">
-    <div class="wrap">
-        <div class="contact">
-            <div>
-                <div class="eyebrow">Get In Touch</div>
-                <h2>Have an eBay project in mind?</h2>
-
-                <p>
-                    Contact me to discuss eBay support, product research,
-                    or business development opportunities.
-                </p>
-
-                <p style="margin-top:15px">
-                    <strong>Email:</strong>
-                    <a href="mailto:alitaqi531@gmail.com">
-                        alitaqi531@gmail.com
-                    </a>
-                </p>
-
-                <p>
-                    <strong>WhatsApp:</strong>
-                    <a href="https://wa.me/923247077436"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        +92 324 7077436
-                    </a>
-                </p>
-
-                <p>
-                    <strong>Location:</strong> Faisalabad, Pakistan
-                </p>
-            </div>
-
-            <div class="actions" style="margin-top:0">
-                <a class="btn primary"
-                   href="mailto:alitaqi531@gmail.com?subject=Portfolio%20Inquiry">
-                    Email Me
-                </a>
-
-                <a class="btn"
-                   href="https://wa.me/923247077436"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    WhatsApp Me
-                </a>
-            </div>
-        </div>
-    </div>
+<div class="wrap">
+<div class="contact">
+<div>
+<h2>Have an eBay project in mind?</h2>
+<p>Contact me to discuss eBay support, product research or business development work.</p>
+<p><strong>Email:</strong> <a href="mailto:alitaqi531@gmail.com">alitaqi531@gmail.com</a></p>
+<p><strong>Phone / WhatsApp:</strong> <a href="tel:+923247077436">03247077436</a></p>
+</div>
+<div class="actions">
+<a class="btn primary" href="mailto:alitaqi531@gmail.com?subject=Portfolio%20Inquiry">Email me</a>
+<a class="btn" href="https://wa.me/923247077436" target="_blank" rel="noopener noreferrer">WhatsApp me</a>
+</div>
+</div>
+</div>
 </section>
-
 </main>
 
-<footer>
-    <div class="wrap foot">
-        <span>
-            © <span id="year"></span> Ali Taqi. All rights reserved.
-        </span>
-        <span>eBay Specialist · Business Developer · Faisalabad, Pakistan</span>
-    </div>
-</footer>
-
-<script>
-    const menuBtn = document.getElementById("menuBtn");
-    const navlinks = document.getElementById("navlinks");
-
-    menuBtn.addEventListener("click", function () {
-        const isOpen = navlinks.classList.toggle("open");
-        menuBtn.setAttribute("aria-expanded", String(isOpen));
-    });
-
-    navlinks.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            navlinks.classList.remove("open");
-            menuBtn.setAttribute("aria-expanded", "false");
-        });
-    });
-
-    document.getElementById("year").textContent =
-        new Date().getFullYear();
-</script>
-
+<footer><div class="wrap foot"><span>© <span id="year">2026</span> Ali Taqi. All rights reserved.</span><span>eBay Specialist · Business Developer · Faisalabad, Pakistan</span></div></footer>
+<script>document.getElementById("year").textContent=new Date().getFullYear();</script>
 </body>
 </html>
